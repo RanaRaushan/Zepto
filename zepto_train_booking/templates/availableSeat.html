@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Available Seat Data</title>
+	<style>
+		table, th, td {
+			border: 1px solid;
+		}
+		td {
+		 	text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div align="center">
+	<table width="50%">
+	<caption><h2>{{ param }} Seat Details</h2></caption>
+		<tr>
+			<th>Seat No</th>
+			<th>Coach</th>
+	  	</tr>
+		{% for item in result %}
+		<tr>
+			<td>{{ item[0] }}</td>
+    		<td>{{ item[1] }}</td>
+		</tr>
+    	{% endfor %}
+	</table>
+	<br>
+	<br>
+	<a href="/user"> <input type="Button" value="Back"/></a>
+</div>
+</body>
+</html>

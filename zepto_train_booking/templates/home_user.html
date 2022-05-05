@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Train Seat Booking</title>
+</head>
+<body>
+
+<div align="center">
+<h2>Please Book Seat:</h2>
+<form method="post">
+<p>See available seat <span> <a href="/availableSeat">here</a></span>  </p>
+<p>Select Seat No and Coach</p>
+<select name="data" multiple>
+    {% for item in result %}
+         <option value="{{ item[0] }}-{{ item[1] }}">{{ item[0] }} - {{ item[1] }}</option>
+    {% endfor %}
+</select>
+<p>Hold down the control (ctrl) button to select multiple options</p>
+<br>
+<input type="submit" value="Book Seat"/>
+</form>
+<p>{{ success_msg }}</p>
+</div>
+
+
+</body>
+</html>

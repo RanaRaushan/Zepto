@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add data</title>
+</head>
+<body>
+<div align="center" >
+<form method="post" name="add">
+	<table width="20%">
+	<caption><h2>Add Coach*</h2></caption>
+		<tr>
+			<td><label>Coach Type*</label></td>
+			<td><input name="coach_type_add"/></td>
+		</tr>
+		<tr>
+			<td><label>No. of Seat*</label></td>
+			<td><input type="number" name="max_no_seat_add"/></td>
+		</tr>
+		<br><br>
+		<tr>
+			<td><input type="submit" value="Add"/></td>
+		</tr>
+	</table>
+	<p>{{ add_message }}</p>
+</form>
+<form method="post" name="remove">
+	<table width="20%">
+		<caption><h2>Remove Coach</h2></caption>
+			<tr>
+				<td><label>Coach Type*</label></td>
+				<td>
+					<select name="coach_type_remove">
+					{% for item in coach %}
+						 <option value="{{ item[0] }}">{{ item[0] }}</option>
+					{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<br><br>
+			<tr>
+				<td><input type="submit" value="Remove"/></td>
+			</tr>
+		</table>
+		<p>{{ remove_message }}</p>
+</form>
+<form method="post" name="edit">
+	<table width="20%">
+		<caption><h2>Edit Coach</h2></caption>
+			<tr>
+				<td><label>Coach Type*</label></td>
+				<td>
+					<select name="old_coach_type_edit">
+					{% for item in coach %}
+						 <option value="{{ item[0] }}">{{ item[0] }}</option>
+					{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label>New Coach name*</label></td>
+				<td><input name="new_coach_type_edit"/></td>
+			</tr>
+			<tr>
+				<td><label>New no. of Seat*</label></td>
+				<td><input type="number" name="new_no_of_seat_edit"/></td>
+			</tr>
+			<br><br>
+			<tr>
+				<td><input type="submit" value="Update"/></td>
+			</tr>
+		</table>
+		<p>{{ edit_message }}</p>
+</form>
+<a href="/admin_user"> <input type="Button" value="Back"/></a>
+</div>
+</body>
+</html>

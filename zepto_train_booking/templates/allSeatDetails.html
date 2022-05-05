@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>All Seat Data</title>
+	<style>
+		table, th, td {
+			border: 1px solid;
+		}
+		td {
+		 	text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div align="center">
+	<table width="50%">
+	<caption><h2>{{ param }} Seat Details</h2></caption>
+		<tr>
+			<th>Seat Id</th>
+			<th>Seat No</th>
+			<th>isbooked?</th>
+			<th>Coach</th>
+	  	</tr>
+		{% for item in result %}
+		<tr>
+			<td>{{ item.seatId }}</td>
+    		<td>{{ item.seatNo }}</td>
+			<td>{% if item.isBooked %} Yes {% else %} No {% endif %}</td>
+			<td>{{ item.coachType }}</td>
+		</tr>
+    	{% endfor %}
+	</table>
+	<br>
+	<br>
+	<a href="/admin_user"> <input type="Button" value="Back"/></a>
+</div>
+</body>
+</html>
